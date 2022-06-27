@@ -1,0 +1,62 @@
+<head>
+  <style>
+    body {
+      width: 50rem;
+      margin: 200px;
+      border: 1px solid black;
+    }
+
+    .parent {
+      background-color: #fabc20;
+      height: 15rem;
+      width: 42rem;
+      margin: auto;
+      overflow: hidden;
+    }
+    a {
+      text-decoration: none;
+      font-size: 5rem;
+      text-align: center;
+    }
+
+    .change {
+      display: inline-block;
+      animation: ani 1000ms 2s ease-out 1 forwards;
+    }
+
+    .change1 {
+      display: inline-block;
+      opacity: 0;
+      transform: translate(-10rem, 10rem);
+      animation: ani2 1200ms 2.1s ease-out 1 forwards;
+    }
+
+    @keyframes ani {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-2rem);
+        color: #fabc20;
+      }
+    }
+
+    @keyframes ani2 {
+      from {
+        transform: translate(-10rem, 10rem);
+        color: #fabc20;
+      }
+      to {
+        opacity: 1;
+        transform: translate(-10rem, 0);
+        color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <a> hello </a><a class="change">bob!</a><a class="change1">World!</a>
+  </div>
+</body>

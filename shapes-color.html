@@ -1,0 +1,70 @@
+<head>
+  <style>
+    html {
+      overflow: hidden;
+    }
+    body {
+      border: 1px solid black;
+    }
+    .trans {
+      height: 200px;
+      width: 200px;
+      background: #ff5454;
+    }
+
+    .button {
+      background: #0e4f1f;
+      color: white;
+      font: inherit;
+      border: 1.5px solid #0e4f1f;
+      padding: 0.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .add {
+      animation: ani 10000ms ease-out 1 forwards;
+    }
+
+    @keyframes ani {
+      0% {
+        transform: translate(0rem, 0rem);
+      }
+      25% {
+        transform: translate(50rem, 0rem);
+        background-color: black;
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(50rem, 30rem);
+        background-color: blue;
+        border-radius: 0%;
+      }
+      75% {
+        transform: translate(0rem, 30rem);
+        background-color: yellow;
+        border-radius: 50%;
+      }
+      100% {
+        transform: translate(0, 0);
+        background-color: red;
+        border-radius: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="trans"></div>
+  <button class="button button1">click me to add</button>
+  <button class="button button2">click me to remove</button>
+
+  <script>
+    var button1 = document.querySelector(".button1");
+    var button2 = document.querySelector(".button2");
+    var trans = document.querySelector(".trans");
+
+    button1.addEventListener("click", () => {
+      trans.classList.add("add");
+    });
+  </script>
+</body>
